@@ -1,0 +1,29 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+    transform 0.06s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  border-color: #cfcfcf;
+}
+
+.on {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}

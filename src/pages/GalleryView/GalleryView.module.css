@@ -1,0 +1,27 @@
+.wrap { display: grid; gap: 12px; }
+
+.filters {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.badgeRow {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  padding-top: 6px; font-size: .88rem;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  background: #fafafa;
+  text-transform: capitalize;
+}
+
+/* New: replace inline center on title */
+.titleCenter { text-align: center; text-transform: capitalize; }

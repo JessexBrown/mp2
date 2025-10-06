@@ -1,0 +1,9 @@
+.shell { display: grid; grid-template-rows: auto 1fr; min-height: 100dvh; }
+.header {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; gap: var(--gap);
+    border-bottom: var(--border); background: white; padding: 10px 16px;
+}
+.brand { font-weight: 800; letter-spacing: .5px; }
+.nav { display: flex; gap: 10px; }
+.main { margin: 0 auto; max-width: var(--max); padding: 16px; width: 100%; }

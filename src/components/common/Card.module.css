@@ -1,0 +1,90 @@
+.linkWrap { color: inherit; text-decoration: none; display: block; }
+
+.card {
+  position: relative;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  transition: transform .06s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+  overflow: hidden; /* keep image from spilling over edges */
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+  border-color: #e5e5e5;
+}
+
+/* ===== Variants ===== */
+.vertical { display: flex; flex-direction: column; }
+.horizontal {
+  display: grid;
+  grid-template-columns: auto 1fr; /* media | text */
+  align-items: center;
+  gap: 12px;
+}
+
+.compact .body { padding: 8px 10px; }
+.compact.horizontal { gap: 10px; }
+
+/* ===== Media area ===== */
+.media {
+  background: #fafafa;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  /* IMPORTANT: allow the media box to size itself to the image (no cropping) */
+  overflow: visible;
+}
+
+/* ---------- Vertical cards: no fixed height, just caps ---------- */
+/* We cap image size instead of container height, so tall sprites never get cut off.
+   The image can grow when few cards are shown, but only up to these caps. */
+.vertical .media img {
+  width: auto;
+  height: auto;
+  max-height: 220px;         /* hard cap: keeps text area visible */
+  max-width: min(100%, 320px); /* avoids ballooning on wide cards (2–3 per row) */
+  object-fit: contain;       /* never crop */
+  display: block;
+}
+
+/* Size presets tweak ONLY the caps (so you can use mediaHeight="sm|md|lg") */
+.vertical.media-sm .media img { max-height: 160px; max-width: min(100%, 260px); }
+.vertical.media-md .media img { max-height: 200px; max-width: min(100%, 300px); }
+.vertical.media-lg .media img { max-height: 240px; max-width: min(100%, 340px); }
+
+/* ---------- Horizontal cards: keep small thumbs, never crop ---------- */
+.horizontal .media { width: 96px; height: 96px; border-right: 1px solid #f2f2f2; }
+.compact.horizontal .media { width: 72px; height: 72px; }
+.horizontal .media img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== Body and text (always readable) ===== */
+.body {
+  position: relative;
+  z-index: 1;
+  background: #fff;          /* guaranteed backdrop behind text */
+  padding: 10px 12px;
+  display: grid;
+  gap: 6px;
+}
+.vertical .body { border-top: 1px solid #f0f0f0; }
+
+.title { font-weight: 700; }
+.subtitle { color: #666; font-size: .92rem; }
+
+.footer {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+  font-size: .9rem;
+  color: #444;
+}
+.horizontal .footer { border-top: none; padding-top: 0; }

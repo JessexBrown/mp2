@@ -1,0 +1,12 @@
+@import-normalize; /* brings normalize.css */
+
+:root {
+  --gap: 12px;
+  --max: 1100px;
+  --border: 1px solid #e7e7e7;
+}
+
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; color: #222; background: #fff; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }

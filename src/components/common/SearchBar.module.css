@@ -1,0 +1,58 @@
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 220px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 34px 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #66a6ff;
+  box-shadow: 0 0 0 3px rgba(102, 166, 255, 0.25);
+}
+
+/* Icon positioning & styling */
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;                  /* perfect vertical centering */
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;       /* clicks go to input */
+  color: #777;                /* use currentColor for strokes below */
+}
+
+/* Draw the glass via CSS (no inline SVG styles) */
+.icon circle,
+.icon line {
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Focus color */
+.input:focus + .icon {
+  color: #3b82f6;
+}
+
+/* Small-screen adaptation */
+@media (max-width: 480px) {
+  .wrap { width: 100%; }
+}
