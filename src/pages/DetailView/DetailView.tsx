@@ -82,11 +82,11 @@ export default function DetailView() {
                 </span>
               </div>
               <div className={styles.aboutRow}>
-                <span className={styles.aboutKey}>Height</span>
+                <span className={styles.aboutKey}>Height (dm)</span>
                 <span className={styles.aboutVal}>{data.height}</span>
               </div>
               <div className={styles.aboutRow}>
-                <span className={styles.aboutKey}>Weight</span>
+                <span className={styles.aboutKey}>Weight (hg)</span>
                 <span className={styles.aboutVal}>{data.weight}</span>
               </div>
             </div>

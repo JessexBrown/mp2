@@ -74,7 +74,7 @@ export default function ListView() {
             <div className={styles.metaRow}>
               <span className={styles.meta}><strong>ID:</strong> {p.id}</span>
               <span className={styles.meta}><strong>Types:</strong> {p.types.map(t => t.type.name).join(", ")}</span>
-              <span className={styles.meta}><strong>HW:</strong> {p.height}/{p.weight}</span>
+              <span className={styles.meta}><strong>H/W:</strong> {p.height} dm /{p.weight} hg</span>
             </div>
           );
 
